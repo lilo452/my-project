@@ -1,0 +1,26 @@
+database_prod:
+  dbname: "db_mysql"
+  dbtable: "music"
+database_test:
+  dbname: "db_mysql"
+  dbtable: "music"
+
+# service_type should be NodePort, ClusterIP or LoadBalancer
+service_type: ClusterIP
+replicas: 2
+
+image:
+  repository: lilo977/my-app
+  tag: "0.1"
+
+pod:
+  target_port: 8000
+  port: 80
+
+serviceMonitor:
+  enabled: true
+  labels:
+    release: prometheus
+    app: monitoring
+  interval: "30s"
+  path: "/metrics"
