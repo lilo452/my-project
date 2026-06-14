@@ -33,6 +33,7 @@ jobs:
 
       - name: Runs git clone
         run: |
+          git rm --cached argo-gitops
           git clone https://lilo452:${{ secrets.REPO_TOKEN }}@github.com/lilo452/argo-gitops.git
           helm template my-app chart > argo-gitops/my-app.yaml
           git add .
