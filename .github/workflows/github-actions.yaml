@@ -32,7 +32,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Runs git clone
-        run: git clone https://lilo452:$github-actions-token@github.com/lilo452/argo-gitops.git
+        run: git clone https://lilo452:${{ secrets.REPO_TOKEN }}@github.com/lilo452/argo-gitops.git
 
       - name: Runs git template and insert it to a file
         run: helm template my-app chart > argo-gitops/my-app.yaml
