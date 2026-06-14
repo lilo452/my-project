@@ -31,12 +31,21 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Runs git actions
+      - name: Runs git clone
         run: |
-        git clone https://lilo452:${{ secrets.REPO_TOKEN }}@github.com/lilo452/argo-gitops.git
-        helm template my-app chart > argo-gitops/my-app.yaml
-        git add .
-        git push
+          git clone https://lilo452:${{ secrets.REPO_TOKEN }}@github.com/lilo452/argo-gitops.git
+          helm template my-app chart > argo-gitops/my-app.yaml
+          git add .
+          git push
+      # - name: Runs git template and insert it to a file
+      #   run: helm template my-app chart > argo-gitops/my-app.yaml
+
+      # - name: Runs git add
+      #   run: git add .
+
+
+      # - name: Runs git push
+      #   run: git push
 
       # - name: Runs echo for docker push
       #   run: echo "docker push docker push lilo977/my-app:0.1"
