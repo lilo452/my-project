@@ -16,7 +16,7 @@ jobs:
         run: echo "docker push docker push lilo977/my-app:0.1"
 
       - name: Runs echo for helm template
-        run: echo "helm template chart"
+        run: echo "helm template my-app-1 chart"
 
       # Step 2: Example Marketplace Action (e.g., HTTP Request)
       # - name: docker build
