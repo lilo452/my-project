@@ -1,0 +1,27 @@
+name: my-proj
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Standard Checkout Action
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Runs echo for docker build
+        run: echo "docker build -i lilo977/my-app:0.1"
+
+      - name: Runs echo for docker push
+        run: echo "docker push docker push lilo977/my-app:0.1"
+
+      - name: Runs echo for helm template
+        run: echo "helm template chart"
+
+      # Step 2: Example Marketplace Action (e.g., HTTP Request)
+      # - name: docker build
+      #   uses: fjogeleit/http-request-action@v1
+      #   with:
+      #     url: 'https://example.com'
+      #     method: 'POST'
+      #     data: '{"status": "building"}'
