@@ -28,12 +28,11 @@ jobs:
           push: true
           tags: |
             ${{ vars.DOCKERHUB_USERNAME }}/myapp:0.${{ github.run_number }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # cache-from: type=gha
+          # cache-to: type=gha,mode=max
 
       - name: Runs git clone
         run: |
-          git rm --cached argo-gitops
           git clone https://lilo452:${{ secrets.REPO_TOKEN }}@github.com/lilo452/argo-gitops.git
           helm template my-app chart > argo-gitops/my-app.yaml
           git add .
