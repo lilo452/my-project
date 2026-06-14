@@ -35,6 +35,7 @@ jobs:
         run: |
           git clone https://lilo452:${{ secrets.REPO_TOKEN }}@github.com/lilo452/argo-gitops.git
           helm template my-app chart > argo-gitops/my-app.yaml
+          cd argo-gitops
           git add .
           git push
       # - name: Runs git template and insert it to a file
