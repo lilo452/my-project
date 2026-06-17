@@ -34,7 +34,7 @@ jobs:
       - name: Runs git clone
         run: |
           git clone https://lilo452:${{ secrets.REPO_TOKEN }}@github.com/lilo452/argo-gitops.git
-          helm template my-app chart > argo-gitops/app-1/my-app.yaml
+          helm template my-app chart --set image.tag=0.${{ github.run_number }} > argo-gitops/app-1/my-app.yaml
           cd argo-gitops
           git config user.name "github action - lihi"
           git config user.email "some-user@my.com"
