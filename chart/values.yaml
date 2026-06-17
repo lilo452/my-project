@@ -10,7 +10,7 @@ service_type: ClusterIP
 replicas: 2
 
 image:
-  repository: lilo977/my-app
+  repository: lilo977/myapp
   tag: "0.1"
 
 pod:
