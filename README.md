@@ -2,6 +2,11 @@
 
 Deploy a Python application using Docker, Kubernetes, Helm, and GitHub Actions.
 
+# Links
+
+https://github.com/lilo452/argo-gitops.git
+https://github.com/lilo452/Terraform-exam.git
+
 ## Project Overview
 
 This project demonstrates a complete containerized application deployment workflow. The application is packaged into a Docker image, stored in a container registry, and deployed to Kubernetes using Helm charts.
